@@ -1,0 +1,38 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >titilola_g</div>
+  <script type="text/javascript">
+    // YOUR CODE
+    var mybox = document.getElementById('my_bouncing_box');
+    
+    let fps = 60;
+    let xposition = 15;
+    let yposition = 4;
+    let xspeed = 4;
+    let yspeed = 4;
+
+    function bouncing_box(){
+        mybox.style.left =xposition + 'px';
+        mybox.style.top =yposition + 'px';
+
+    }
+
+    setInterval(()=>{
+        if (xposition + mybox.clientWidth >= window.innerWidth || xposition <=0){
+            xspeed = -xspeed;
+        }
+         if (yposition + mybox.clientHeight >= window.innerHeight|| yposition <=0){
+            yspeed = -yspeed;
+        }
+        xposition += xspeed;
+        yposition += yspeed;
+
+        bouncing_box()
+    }, 1000/fps)
+
+   
+  
+
+
+     
+    </script>
+</html>
